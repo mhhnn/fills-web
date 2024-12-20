@@ -1,0 +1,47 @@
+:root {
+  --header-height: 64px;
+  @media (max-width: 768px) {
+    --header-height: 56px;
+  }
+  @media (max-width: 480px) {
+    --header-height: 48px;
+  }
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(1rem, 5vw, 2rem);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+
+  .logo {
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: clamp(1.25rem, 3vw, 1.5rem);
+      font-weight: bold;
+    }
+  }
+
+  nav {
+    a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      font-size: clamp(1rem, 2.5vw, 1.125rem);
+
+      &:hover, &.active {
+        opacity: 1;
+      }
+    }
+  }
+} 
